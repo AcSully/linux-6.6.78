@@ -8,6 +8,16 @@ config DRM_PANEL
 menu "Display Panels"
 	depends on DRM && DRM_PANEL
 
+config DRM_PANEL_ALIENTEK_MIPI_LCD
+	tristate "Alientek MIPI DSI video mode panel"
+	depends on OF
+	depends on DRM_MIPI_DSI
+	depends on BACKLIGHT_CLASS_DEVICE
+	help
+		Say Y here if you want to enable support for Alientek Himax839x and ILI9881
+		TFT-LCD modules. The panel has a 5.5 inch lcd 720x1280, 1080x1920 
+		and 10.1 inch lcd 800x1280 resolution.
+
 config DRM_PANEL_ABT_Y030XX067A
 	tristate "ABT Y030XX067A 320x480 LCD panel"
 	depends on OF && SPI
